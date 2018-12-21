@@ -1,0 +1,38 @@
+let url = "https://newsapi.org/v2/top-headlines?sources=hacker-news&apiKey=04680f196bdb4dee89fd96c98a100d5c";
+
+fetch(url)
+  .then(r => {
+    return r.json();
+  })
+  .then(data => {
+    let results = data.results; // get the array of results from the data object
+    let hackerNewsList = document.createElement("ul"); // create a new `<li>`
+    let body = document.querySelector("body"); // attach to the `<body>` node of the DOM
+    body.appendChild(hackerNewsList); // append the list to the body
+    hacker => {
+      // loop through each recipe object in the array of recipes
+      let hackerItem = document.createElement("li"); // create a recipe item `<li>`
+      hackerItem.innerHTML =
+        '<a href="' + recipe.href + '">' + recipe.title + "</a>"; // add the link to each li with each recipe's title as the text and link as the href
+        hackerNewsList.appendChild(hackerItem); // append each recipe to the `<ul>`
+    };
+  })
+  .catch(e => {
+    console.log(`An error occurred: ${e}`);
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
